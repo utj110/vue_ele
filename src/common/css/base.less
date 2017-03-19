@@ -1,0 +1,55 @@
+/*.border-1px{*/
+    /*position: relative;*/
+/*}*/
+body, html{
+    font-weight: 200;
+    font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif;
+}
+
+.clearfix:after{
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/*设置手机端1px边框*/
+.border-1px:after{
+    content:'';
+    display: block;
+    width: 100%;
+    border-top:1px solid #ccc;
+}
+@media (min-device-pixel-ratio: 1.5),(-webkit-min-device-pixel-ratio: 1.5){
+    .border-1px:after{
+        -webkit-transform: scaleY(0.7);
+        -moz-transform: scaleY(0.7);
+        -ms-transform: scaleY(0.7);
+        -o-transform: scaleY(0.7);
+        transform: scaleY(0.7);
+    }
+}
+@media (min-device-pixel-ratio: 2),(-webkit-min-device-pixel-ratio: 2){
+    .border-1px:after{
+        -webkit-transform: scaleY(0.5);
+        -moz-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+        -o-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+}
+
+.bg-image(@name){
+    background-image:url("../../../resource/img/@{name}@2x.png");
+    @media (min-device-pixel-ratio: 3){
+
+        background-image:url("../../../resource/img/@{name}@3x.png");
+
+    }
+}
+//.bg{
+//    background: url("../../components/header/brand@2x.png")
+//}
